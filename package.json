@@ -1,5 +1,5 @@
 {
-  "name": "rx-101",
+  "name": "rxjs",
   "version": "1.0.0",
   "description": "Course Files",
   "private": true,
@@ -10,7 +10,7 @@
     "start": "webpack-dev-server --open"
   },
   "keywords": [],
-  "author": "Matt Keener",
+  "author": "Ni Ngo",
   "license": "ISC",
   "devDependencies": {
     "webpack": "^4.32.2",
