@@ -1,5 +1,5 @@
 import { add } from './helpers';
-import { of, from, fromEvent } from 'rxjs';
+import { of, from, fromEvent, interval } from 'rxjs';
 import { fromFetch } from 'rxjs/fetch';
 import { switchMap } from 'rxjs/operators';
 
