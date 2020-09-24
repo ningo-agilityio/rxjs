@@ -218,8 +218,8 @@ function printLine(tick, type) {
   svg.appendChild(line);
 }
 
-function printLi(value) {
-  const ul = document.getElementById("display-list");
+function printLi(value, id) {
+  const ul = document.getElementById(id);
   const item = document.createElement("li");
   item.innerHTML = value;
   item.className = "collection-item";

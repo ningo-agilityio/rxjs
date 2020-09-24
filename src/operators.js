@@ -13,8 +13,8 @@ const users = fromFetch(endpoint)
 
 // Event
 const btnSubmit = document.getElementById('btnSubmit')
-fromEvent(btnSubmit, 'click').subscribe(() => add.li('clicked'))
+fromEvent(btnSubmit, 'click').subscribe(() => add.li('clicked', 'display-list-operators'))
 
 // Simple
-const numbers = of(1, 2, 3, 4).subscribe(add.li)
-const fruits = from(['apple', 'orange', 'grape']).subscribe(add.li)
+const numbers = of(1, 2, 3, 4).subscribe(value => add.li(value, 'display-list-operators'))
+const fruits = from(['apple', 'orange', 'grape']).subscribe(value => add.li(value, 'display-list-operators'))
