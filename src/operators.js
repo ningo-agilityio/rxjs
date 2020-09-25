@@ -1,5 +1,12 @@
 import { add } from './helpers';
-import { of, from, fromEvent, interval, timer, combineLatest } from 'rxjs';
+import { 
+  of, 
+  from, 
+  fromEvent, 
+  interval, 
+  timer, 
+  combineLatest 
+} from 'rxjs';
 import { fromFetch } from 'rxjs/fetch';
 import { 
   switchMap, 
@@ -10,7 +17,8 @@ import {
   throttle, 
   debounceTime,
   scan,
-  reduce
+  reduce,
+  concatAll
 } from 'rxjs/operators';
 
 // Fetch
