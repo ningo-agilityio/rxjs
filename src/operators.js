@@ -1,14 +1,33 @@
 import { add } from './helpers';
 import { of, from, fromEvent, interval } from 'rxjs';
 import { fromFetch } from 'rxjs/fetch';
-import { switchMap, filter, take, map, tap, pluck } from 'rxjs/operators';
+import { 
+  switchMap, 
+  filter, 
+  take, takeWhile,
+  map, tap, pluck, startWith, 
+  skipLast, skipWhile 
+} from 'rxjs/operators';
 
 // Fetch
+const me = {
+  name: "Ni Ngo"
+}
+const ignoreUser = {
+  name: "Leanne Graham"
+}
+
 const endpoint = 'https://jsonplaceholder.typicode.com/users'
 const users = fromFetch(endpoint)
 .pipe(switchMap((response) => response.json()))
 .subscribe((result) => from(result).
-  pipe(pluck("name"))
+  pipe(
+    takeWhile((value, index) => index < 10),
+    skipWhile(value => value.name === ignoreUser.name), 
+    startWith(me), 
+    skipLast(5), 
+    pluck("name"),
+  )
   .subscribe(value => add.li(value, 'display-list-operators')) 
 )
 
