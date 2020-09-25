@@ -1,5 +1,5 @@
 import { add } from './helpers';
-import { of, from, fromEvent, interval } from 'rxjs';
+import { of, from, fromEvent, interval, timer, combineLatest } from 'rxjs';
 import { fromFetch } from 'rxjs/fetch';
 import { 
   switchMap, 
@@ -10,8 +10,7 @@ import {
   throttle, 
   debounceTime,
   scan,
-  reduce,
-  concatMap 
+  reduce
 } from 'rxjs/operators';
 
 // Fetch
@@ -54,7 +53,9 @@ counter.pipe(take(5), tap(value => add.li(`before x 2: ${value}`, "display-list-
 .subscribe(value => add.li(value, "display-list-operators"))
 
 // Throttle
-interval(10).pipe(throttle(() => interval(1000)), take(10)).subscribe(value => add.li(value, "display-list-throttle"))
+interval(10)
+.pipe(throttle(() => interval(1000)), take(10))
+.subscribe(value => add.li(value, "display-list-throttle"))
 
 // Debounce
 const textBox = document.getElementById("input-debounce")
@@ -102,3 +103,18 @@ interval(100)
   )
 )
 .subscribe(value => add.li(value, "display-list-reduce"))
+
+// Combine latest
+combineLatest(
+  timer(1, 4), // timerOne emits first value at 1s, then once every 4s
+  timer(2, 4), // timerTwo emits first value at 2s, then once every 4s
+  timer(3, 4), // timerThree emits first value at 3s, then once every 4s
+  // combineLatest also takes an optional projection function
+  (one, two, three) => {
+    return `Timer One (Proj) Latest: ${one}, 
+              Timer Two (Proj) Latest: ${two}, 
+              Timer Three (Proj) Latest: ${three}`;
+  }
+)
+// .subscribe(value => add.li(value, "display-list-combine-latest"))
+
