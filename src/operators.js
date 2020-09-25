@@ -20,7 +20,6 @@ import {
   debounceTime,
   scan,
   reduce,
-  concatAll
 } from 'rxjs/operators';
 
 // Fetch
