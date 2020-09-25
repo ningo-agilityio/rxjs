@@ -5,7 +5,8 @@ import {
   fromEvent, 
   interval, 
   timer, 
-  combineLatest 
+  combineLatest,
+  Subject 
 } from 'rxjs';
 import { fromFetch } from 'rxjs/fetch';
 import { 
@@ -15,6 +16,7 @@ import {
   map, tap, pluck, startWith, 
   skipLast, skipWhile,
   throttle, 
+  debounce,
   debounceTime,
   scan,
   reduce,
@@ -126,3 +128,48 @@ combineLatest(
 )
 // .subscribe(value => add.li(value, "display-list-combine-latest"))
 
+// debounce & throttle
+const source = new Subject();
+const control = new Subject();
+
+/**
+ * so first, emit one value and emit a control.
+ */
+setImmediate(() => source.next(1));
+setImmediate(() => control.next());
+
+/**
+ * then emit two values and emit a control.
+ */
+setImmediate(() => source.next(2));
+setImmediate(() => source.next(3));
+setImmediate(() => control.next());
+
+/**
+ * then emit three values and emit a control (bc why not).
+ */
+setImmediate(() => source.next(4));
+setImmediate(() => source.next(5));
+setImmediate(() => source.next(6));
+setImmediate(() => control.next());
+
+/**
+ * then emit a final value and complete the source without
+ * emitting any more controls.
+ */
+setImmediate(() => source.next(7));
+setImmediate(() => source.complete());
+
+source
+  .pipe(throttle(value => {
+    add.li('control for ' + value, "display-list-throttle-comparison")
+    return control.pipe(take(1));
+  }))
+  .subscribe(value => add.li( value, "display-list-throttle-comparison"))
+
+source
+  .pipe(debounce(value => {
+    add.li('control for ' + value, "display-list-debounce-comparison")
+    return control.pipe(take(1));
+  }))
+  .subscribe(value => add.li(value, "display-list-debounce-comparison"))
