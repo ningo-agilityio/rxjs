@@ -2,7 +2,6 @@ import { interval, pipe, animationFrameScheduler, of } from "rxjs";
 import { take, map, scan, takeWhile, switchMap } from "rxjs/operators";
 import {ajax} from "rxjs/ajax";
 
-
 export const sampleData = ajax.getJSON('https://jsonplaceholder.typicode.com/users')
 .pipe(
     switchMap(
@@ -11,8 +10,6 @@ export const sampleData = ajax.getJSON('https://jsonplaceholder.typicode.com/use
         }
     )
 )
-
-
 
 export const add = {
   li: printLi,
@@ -46,9 +43,6 @@ clock.increments = n => {
 };
 
 clock.initial = clock.totalRadians * 0.75;
-
-
-
 
 export class Clock {
   constructor(parent) {
