@@ -6,6 +6,7 @@
       href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet"
     />
+    <link rel="icon" type="image/png" href="assets/favico.png"/>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
@@ -29,6 +30,29 @@
       </nav>
     </nav>
     <main id="main">
+      <section class="display-container">
+        <h5>Audio project</h5>
+        <audio 
+          id="audioElement" 
+          preload="auto" 
+          controls
+          src="assets/sample.mp3"
+        >
+        </audio> 
+        <canvas
+          width=500
+          height=500
+          id="display-canvas"
+          style="border: 5px solid #999"
+        ></canvas>
+      </section>
+      
+      <section class="display-container">
+        <h5>Subject</h5>
+        <ul id="display-list-subject" class="collection">
+        </ul>
+      </section>
+
       <section class="display-container">
         <h5>Http</h5>
         <ul id="display-list-http" class="collection">
