@@ -6,7 +6,8 @@
 // import './exhausted-map'
 // import './http'
 // import './subject'
-import './audio-project'
+// import './subject/audio-project'
+import './subject/behavior-subject'
 
 document.addEventListener('DOMContentLoaded', function() {
 });

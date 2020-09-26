@@ -1,4 +1,4 @@
-import { add } from "./helpers"
+import { add } from "../helpers"
 import { Subject, Observable } from "rxjs"
 
 const subjectContentId = "display-list-subject"
