@@ -7,7 +7,8 @@
 // import './http'
 // import './subject'
 // import './subject/audio-project'
-import './subject/behavior-subject'
+// import './subject/behavior-subject'
+import './weather/index'
 
 document.addEventListener('DOMContentLoaded', function() {
 });

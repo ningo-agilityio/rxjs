@@ -4,7 +4,8 @@ var cors = require("cors");
 const app = express();
 const port = 3000;
 app.use(cors());
-
+require('dotenv').config()
+const mockData = require("./mock-data.json")
 
 // Add your keys
 const keys = {
@@ -18,13 +19,9 @@ const googleMapsClient = require("@google/maps").createClient({
   key: keys.googleMaps
 });
 const util = require("@google/maps").util;
-
 const token = util.placesAutoCompleteSessionToken();
 
-
 app.get("/autocomplete/:id", (req, res) => {
-  
-
   googleMapsClient.placesAutoComplete(
     {
       input: req.params.id,
@@ -32,7 +29,9 @@ app.get("/autocomplete/:id", (req, res) => {
       sessiontoken: token
     },
     (_, result) => {
-      res.send(result.json.predictions);
+      // TODO: will check real result later
+      console.log(mockData.predictions)
+      res.send(mockData.predictions);
     }
   );
 });
@@ -53,7 +52,7 @@ app.get("/place/:id", (req, res) => {
 
 
 app.get("/weather/:lat/:long", (req, res) => {
-    fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${req.params.lat}&lon=${req.params.long}&exclude=hourly,daily&appid=${keys.openWeather}`)
+    fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${req.params.lat}&lon=${req.params.long}&appid=${keys.openWeather}`)
     .then(res => res.json())
     .then(json => res.json(json));
 });

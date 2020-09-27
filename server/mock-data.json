@@ -1,0 +1,237 @@
+{
+  "predictions" : [
+     {
+        "description" : "Danang, Hải Châu District, Da Nang, Vietnam",
+        "matched_substrings" : [
+           {
+              "length" : 6,
+              "offset" : 0
+           }
+        ],
+        "place_id" : "ChIJEyolkscZQjERh2RDRKDjFPw",
+        "reference" : "ChIJEyolkscZQjERh2RDRKDjFPw",
+        "structured_formatting" : {
+           "main_text" : "Danang",
+           "main_text_matched_substrings" : [
+              {
+                 "length" : 6,
+                 "offset" : 0
+              }
+           ],
+           "secondary_text" : "Hải Châu District, Da Nang, Vietnam"
+        },
+        "terms" : [
+           {
+              "offset" : 0,
+              "value" : "Danang"
+           },
+           {
+              "offset" : 8,
+              "value" : "Hải Châu District"
+           },
+           {
+              "offset" : 27,
+              "value" : "Da Nang"
+           },
+           {
+              "offset" : 36,
+              "value" : "Vietnam"
+           }
+        ],
+        "types" : [ "locality", "political", "geocode" ]
+     },
+     {
+        "description" : "Danang Golden Bay Hotel, Lê Văn Duyệt, Nại Hiên Đông, Sơn Trà, Da Nang, Vietnam",
+        "matched_substrings" : [
+           {
+              "length" : 6,
+              "offset" : 0
+           }
+        ],
+        "place_id" : "ChIJQWWv4A8YQjERuqj9zjNqKAc",
+        "reference" : "ChIJQWWv4A8YQjERuqj9zjNqKAc",
+        "structured_formatting" : {
+           "main_text" : "Danang Golden Bay Hotel",
+           "main_text_matched_substrings" : [
+              {
+                 "length" : 6,
+                 "offset" : 0
+              }
+           ],
+           "secondary_text" : "Lê Văn Duyệt, Nại Hiên Đông, Sơn Trà, Da Nang, Vietnam"
+        },
+        "terms" : [
+           {
+              "offset" : 0,
+              "value" : "Danang Golden Bay Hotel"
+           },
+           {
+              "offset" : 25,
+              "value" : "Lê Văn Duyệt"
+           },
+           {
+              "offset" : 39,
+              "value" : "Nại Hiên Đông"
+           },
+           {
+              "offset" : 54,
+              "value" : "Sơn Trà"
+           },
+           {
+              "offset" : 63,
+              "value" : "Da Nang"
+           },
+           {
+              "offset" : 72,
+              "value" : "Vietnam"
+           }
+        ],
+        "types" : [ "lodging", "point_of_interest", "establishment" ]
+     },
+     {
+        "description" : "Danang University of Technology, Nguyễn Lương Bằng, Hòa Khánh Bắc, Liên Chiểu, Da Nang, Vietnam",
+        "matched_substrings" : [
+           {
+              "length" : 6,
+              "offset" : 0
+           }
+        ],
+        "place_id" : "ChIJRZX_jdYYQjERLCmn8-lhRXE",
+        "reference" : "ChIJRZX_jdYYQjERLCmn8-lhRXE",
+        "structured_formatting" : {
+           "main_text" : "Danang University of Technology",
+           "main_text_matched_substrings" : [
+              {
+                 "length" : 6,
+                 "offset" : 0
+              }
+           ],
+           "secondary_text" : "Nguyễn Lương Bằng, Hòa Khánh Bắc, Liên Chiểu, Da Nang, Vietnam"
+        },
+        "terms" : [
+           {
+              "offset" : 0,
+              "value" : "Danang University of Technology"
+           },
+           {
+              "offset" : 33,
+              "value" : "Nguyễn Lương Bằng"
+           },
+           {
+              "offset" : 52,
+              "value" : "Hòa Khánh Bắc"
+           },
+           {
+              "offset" : 67,
+              "value" : "Liên Chiểu"
+           },
+           {
+              "offset" : 79,
+              "value" : "Da Nang"
+           },
+           {
+              "offset" : 88,
+              "value" : "Vietnam"
+           }
+        ],
+        "types" : [ "university", "university", "point_of_interest", "establishment" ]
+     },
+     {
+        "description" : "DaNang Souphouse, East Belt Line Road, Richardson, TX, USA",
+        "matched_substrings" : [
+           {
+              "length" : 6,
+              "offset" : 0
+           }
+        ],
+        "place_id" : "ChIJn1xMY20fTIYRCOn1sqWrqEY",
+        "reference" : "ChIJn1xMY20fTIYRCOn1sqWrqEY",
+        "structured_formatting" : {
+           "main_text" : "DaNang Souphouse",
+           "main_text_matched_substrings" : [
+              {
+                 "length" : 6,
+                 "offset" : 0
+              }
+           ],
+           "secondary_text" : "East Belt Line Road, Richardson, TX, USA"
+        },
+        "terms" : [
+           {
+              "offset" : 0,
+              "value" : "DaNang Souphouse"
+           },
+           {
+              "offset" : 18,
+              "value" : "East Belt Line Road"
+           },
+           {
+              "offset" : 39,
+              "value" : "Richardson"
+           },
+           {
+              "offset" : 51,
+              "value" : "TX"
+           },
+           {
+              "offset" : 55,
+              "value" : "USA"
+           }
+        ],
+        "types" : [ "restaurant", "food", "point_of_interest", "establishment" ]
+     },
+     {
+        "description" : "Danang Riverside Hotel, Đường Trần Hưng Đạo, An Hải, An Hải Tây, Sơn Trà, Da Nang, Vietnam",
+        "matched_substrings" : [
+           {
+              "length" : 6,
+              "offset" : 0
+           }
+        ],
+        "place_id" : "ChIJyzjoRtMZQjERSALaMyZDqK8",
+        "reference" : "ChIJyzjoRtMZQjERSALaMyZDqK8",
+        "structured_formatting" : {
+           "main_text" : "Danang Riverside Hotel",
+           "main_text_matched_substrings" : [
+              {
+                 "length" : 6,
+                 "offset" : 0
+              }
+           ],
+           "secondary_text" : "Đường Trần Hưng Đạo, An Hải, An Hải Tây, Sơn Trà, Da Nang, Vietnam"
+        },
+        "terms" : [
+           {
+              "offset" : 0,
+              "value" : "Danang Riverside Hotel"
+           },
+           {
+              "offset" : 24,
+              "value" : "Đường Trần Hưng Đạo"
+           },
+           {
+              "offset" : 45,
+              "value" : "An Hải"
+           },
+           {
+              "offset" : 53,
+              "value" : "An Hải Tây"
+           },
+           {
+              "offset" : 65,
+              "value" : "Sơn Trà"
+           },
+           {
+              "offset" : 74,
+              "value" : "Da Nang"
+           },
+           {
+              "offset" : 83,
+              "value" : "Vietnam"
+           }
+        ],
+        "types" : [ "lodging", "point_of_interest", "establishment" ]
+     }
+  ],
+  "status" : "OK"
+}
