@@ -5,7 +5,8 @@ const app = express();
 const port = 3000;
 app.use(cors());
 require('dotenv').config()
-const mockData = require("./mock-data.json")
+const mockAutoCompletePlaces = require("./mock-autocomplete.json")
+const mockPlaceDetail = require("./mock-placedetails.json")
 
 // Add your keys
 const keys = {
@@ -21,6 +22,7 @@ const googleMapsClient = require("@google/maps").createClient({
 const util = require("@google/maps").util;
 const token = util.placesAutoCompleteSessionToken();
 
+// https://maps.googleapis.com/maps/api/place/autocomplete/json?input=danang&language=en&sessiontoken=2bafebf9-1058-4510-aa0f-998038941a4b&key=AIzaSyCd1TiNeosvQfoRibNNEYLbI_Q_QwfsMlA
 app.get("/autocomplete/:id", (req, res) => {
   googleMapsClient.placesAutoComplete(
     {
@@ -30,12 +32,12 @@ app.get("/autocomplete/:id", (req, res) => {
     },
     (_, result) => {
       // TODO: will check real result later
-      console.log(mockData.predictions)
-      res.send(mockData.predictions);
+      res.send(mockAutoCompletePlaces.predictions || []);
     }
   );
 });
 
+// https://maps.googleapis.com/maps/api/place/details/json?place_id=ChIJEyolkscZQjERh2RDRKDjFPw&language=en&sessiontoken=2bafebf9-1058-4510-aa0f-998038941a4b&key=AIzaSyCd1TiNeosvQfoRibNNEYLbI_Q_QwfsMlA
 app.get("/place/:id", (req, res) => {
   googleMapsClient.place(
     {
@@ -43,8 +45,8 @@ app.get("/place/:id", (req, res) => {
         language: 'en'
     },
     (_, result) => {
-        
-      res.send(result.json.result);
+      // TODO: will check real result later
+      res.send(mockPlaceDetail.result || {});
     }
   );
 });
