@@ -8,10 +8,10 @@ app.use(cors());
 
 // Add your keys
 const keys = {
-  //https://developers.google.com/places/web-service/intro
-  googleMaps : "YOUR KEY GOES HERE",
-  //https://darksky.net/dev
-  darkSky : "YOUR KEY GOES HERE"
+  // https://developers.google.com/places/web-service/intro
+  googleMaps : process.env.GOOGLE_MAP_API_KEY,
+  // https://home.openweathermap.org/api_keys
+  openWeather : process.env.OPEN_WEATHER_API_KEY
 };
 
 const googleMapsClient = require("@google/maps").createClient({
@@ -53,12 +53,9 @@ app.get("/place/:id", (req, res) => {
 
 
 app.get("/weather/:lat/:long", (req, res) => {
-    fetch(`https://api.darksky.net/forecast/${keys.darkSky}/${req.params.lat},${req.params.long}`)
+    fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${req.params.lat}&lon=${req.params.long}&exclude=hourly,daily&appid=${keys.openWeather}`)
     .then(res => res.json())
     .then(json => res.json(json));
-
-
 });
-
 
 app.listen(port, () => console.log(`The Weather Server is running on ${port}!`));
